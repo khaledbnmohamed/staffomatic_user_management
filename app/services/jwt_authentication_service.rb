@@ -20,7 +20,7 @@ class JwtAuthenticationService
 
   def self.parse_auth_header(request)
     # { Authentication: 'Bearer <token>' }
-    auth_header = request.headers['Authentication']
+    auth_header = request.headers['Authorization']
     return unless auth_header && auth_header.split(' ').present?
 
     return auth_header.split(' ')[1]
